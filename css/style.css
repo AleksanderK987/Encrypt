@@ -1,0 +1,110 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fca311;
+    margin: 0;
+    font-size: 16pt;
+}
+
+h1{
+    font-size: 25pt;
+}
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.encryptContainer {
+    width: 50%;
+    min-height: 100%;
+    clip-path: polygon(0 0, calc(100% - 5vh) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 5vh) 0, 100% 100%, 0 100%);
+    margin-left: 0;
+    padding: 50px 11vh 5px 5px;
+    background-color: #14213d;
+    text-align: center;
+    color: #e5e5e5;
+}
+
+
+.decryptContainer {
+    width: 50vw;
+    min-height: 100%;;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 5vh) 100%);
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 5vh) 100%);
+	padding: 50px 5px 5px 11vh;
+	background-color: #e5e5e5;
+	text-align: center;
+    color:#14213d;
+}
+
+button {
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.encryptButton{
+    background-color: #e5e5e5;
+    color: #14213d;
+}
+
+.decryptButton{
+    background-color: #14213d;
+    color: #e5e5e5;
+}
+
+.encryptButton:hover{
+    background-color: #c2c0c0;
+    top: 1px;
+    position:relative;
+}
+
+.decryptButton:hover {
+    background-color: #0d1526;
+    top: 1px;
+    position: relative;
+}
+
+#key{
+   background: #edede9;
+   width: 50%;
+   height: 30px;
+   font-size: 14pt;
+   border-radius: 4px;
+   padding-left: 15px;
+   border: 2px solid #fca311;   
+}
+
+.decryptContainer #key{
+    border: 2px solid #14213d;
+}
+
+textarea{
+    font-family: Arial, sans-serif;
+    background: #edede9;
+    width: 50%;
+    min-height: 200px;
+    font-size: 14pt;
+    border-radius: 4px;
+    padding: 10px 15px;
+    border: 2px solid #fca311;
+    resize:none;
+}
+
+.decryptContainer textarea{
+    border: 2px solid #141414;
+}
