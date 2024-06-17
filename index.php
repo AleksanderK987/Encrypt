@@ -11,57 +11,26 @@
         <div class="wrapper">
             <div class="encryptContainer">
                 <h1>Encryption</h1>
-                <form id="form">
-                    <br>Key: <br></br>
-                    <input type="text" id="key" name="key" placeholder="Type.." required><br><br>
+                <form id="formEncrypt">
+                    <br>Generate key: <br></br>
+                    Length of Key: <span id="keyLength">5</span><br></br>
+                    <input type="range" id="keyLengthRange" class="slider" name="keyLengthRange" min="5" max="15" value="8" oninput="updateKeyLength(this.value)"><br></br>
+                    <button type="button" class="generateButton" onclick="generateKey()"><b>Generate</b></button><br></br>
+                    <input type="text" id="encryptKey" name="encryptKey" placeholder="Or type.." required onkeypress="return event.charCode != 32"  pattern="[a-zA-Z]+"><br></br>
                     Message:<br></br>
                     <textarea id="message" name="message" placeholder="Type.."></textarea><br></br>
-                    <button type="button" class="encryptButton" onClick="encrypt()">Encrypt</button></br>
+                    <button type="button" class="encryptButton" onclick="encrypt()"><b>Encrypt</b></button></br>
                 </form>
             </div>
             <div class="decryptContainer">
                 <h1>Decryption</h1>
-                <form id="form">
+                <form id="formDecrypt">
                     <br>Key: <br></br>
-                    <input type="text" id="key" name="key" placeholder="Type.." required><br><br>
+                    <input type="text" id="decryptKey" name="decryptKey" placeholder="Type.." required><br></br>
                     Message:<br></br>
                     <textarea id="message" name="message" placeholder="Type.."></textarea><br></br>
-                    <button type="button" class="decryptButton" onClick="decrypt()">Decrypt</button></br>
-                </form>
-                
-                <!-- <?php
-                    // Database connection
-                    $dbConnection=new mysqli('localhost', 'root','','reviews');
-
-                    if($dbConnection->connect_error){
-                        die("Connection Error: ".$dbConnection->connect_error);
-                    }
-                    // Use prepared statements to avoid SQL injection
-                    $query="SELECT * FROM Reviews_table ORDER BY date DESC, time DESC";
-                    $result =$dbConnection->query($query);
-                    // fetching data from the database
-                    if($result->num_rows>0){
-                        while ($row = $result->fetch_assoc()){
-                            $year=substr($row['date'],2,2);
-                            $month=substr($row['date'],5,2);
-                            $day=substr($row['date'],8,2);
-                            $hour=substr($row['time'],0,5);
-                       echo "<div class='reviewView'>";
-                       echo "<div class='reviewHeader'>";
-                           echo "<div class='reviewNick'>".$row['nickname']." $day/$month/$year $hour</div>";
-                           echo "<div class='reviewRates'>Assortment: ".$row['assortment_rating']." Service: ".$row['service_rating']." Decor: ".$row['decor_rating']."</div>";
-                        echo "</div>";
-                        echo "<p><div class='reviewDesc'>".$row['description'];
-                        echo "</div></p>";
-                    echo "</div>";
-                        }
-                    }
-                    else{
-                        echo "No reviews yet.";
-                    }
-                    // Close the database connection
-                    $dbConnection->close();
-                ?> -->
+                    <button type="button" class="decryptButton" onclick="decrypt()"><b>Decrypt</b></button></br>
+                </form>            
             </div>
         </div>
     </body>
