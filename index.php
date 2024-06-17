@@ -13,7 +13,7 @@
                 <h1>Encryption</h1>
                 <form id="formEncrypt">
                     <br>Generate key: <br></br>
-                    Length of Key: <span id="keyLength">5</span><br></br>
+                    Length of key: <span id="keyLength">5</span><br></br>
                     <input type="range" id="keyLengthRange" class="slider" name="keyLengthRange" min="5" max="15" value="8" oninput="updateKeyLength(this.value)"><br></br>
                     <button type="button" class="generateButton" onclick="generateKey()"><b>Generate</b></button><br></br>
                     <input type="text" id="encryptKey" name="encryptKey" placeholder="Or type.." required onkeypress="return event.charCode != 32"  pattern="[a-zA-Z]+"><br></br>
