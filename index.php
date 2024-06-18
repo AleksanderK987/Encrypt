@@ -28,7 +28,7 @@
                     <br>Key: <br></br>
                     <input type="text" id="decryptKey" name="decryptKey" placeholder="Type.." required><br></br>
                     Message:<br></br>
-                    <textarea id="message" name="message" placeholder="Type.."></textarea><br></br>
+                    <textarea id="decryptMessage" name="decryptMessage" placeholder="Type.."></textarea><br></br>
                     <button type="button" class="decryptButton" onclick="decrypt()"><b>Decrypt</b></button></br>
                 </form>            
             </div>
